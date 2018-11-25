@@ -18,9 +18,9 @@ visit `localhost:30080`
 
 # add ssh key
 
-- generate ~/.ssh/yourkey.pub
-- copy ~/.ssh/yourkey.pub
-- paste into profile settings > ssh keys
+- generate `~/.ssh/yourkey.pub`
+- copy `~/.ssh/yourkey.pub`
+- add SSH key: `Profile` > `Settings` > `SSH Keys` > paste into `Key` > `Add key`
 
 # push code (should just work with ssh)
 
