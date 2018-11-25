@@ -15,3 +15,16 @@ visit `localhost:30080`
 
 - root
 - password
+
+# add ssh key
+
+- generate ~/.ssh/yourkey.pub
+- copy ~/.ssh/yourkey.pub
+- paste into profile settings > ssh keys
+
+# push code (should just work with ssh)
+
+```
+git remote add local yourprojecturl
+git push local master
+```
