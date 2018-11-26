@@ -1,6 +1,12 @@
 redis:
   restart: always
   image: redis:3.0.7-alpine
+web:
+  build: .
+  ports:
+    - "5000:5000"
+  volumes:
+    - .:/code
 postgresql:
   restart: always
   image: postgres:9.6.2-alpine
@@ -11,7 +17,7 @@ postgresql:
 gitlab:
   image: 'gitlab/gitlab-ce:9.1.0-ce.0'
   restart: always
-  hostname: 'gitlab.example.com'
+  hostname: 'localhost'
   links:
     - postgresql:postgresql
     - redis:redis
@@ -28,7 +34,7 @@ gitlab:
       redis['enable'] = false
       gitlab_rails['redis_host'] = 'redis'
       gitlab_rails['redis_port'] = '6379'
-      external_url 'http://gitlab.example.com:30080'
+      external_url 'http://localhost:30080'
       gitlab_rails['gitlab_shell_ssh_port'] = 30022
   ports:
 # both ports must match the port from external_url above
